@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">AssetsManage</string>
+
+    <!--rfid-->
+    <string name="select_range">输出功率:   </string>
+    <string name="infCyc">盘点</string>
+    <string name="stopinfCyc">停止盘点</string>
+    <string name="MulRead">多标签识别</string>
+    <string name="stopMulRead">停止读卡</string>
+    <string name="info_nobtdevice">无法打开设备蓝牙，请确认设备是否有蓝牙功能！</string>
+    <string name="BT_Conn">蓝牙连接……</string>
+    <string name="BT_dConn">断开连接</string>
+    <string name="BT_sta_dConn">未连接  统计:</string>
+    <string name="BT_sta_Conn">已连接  统计:</string>
+    <string name="Clear">清空</string>
+    <string name="Exit">退出</string>
+    <string name="setant">设置功率</string>
+    <string name="getant">获取功率</string>
+    <string name="openbeep">打开蜂鸣器</string>
+    <string name="closebeep">关闭蜂鸣器</string>
+    <string name="Tagdata">标签数据</string>
+    <string name="Tagcount">计数</string>
+    <string name="info_btconn">请先连接蓝牙设备！</string>
+    <string name="info_QRexit">再按一次返回主界面</string>
+    <string name="info_nobt">蓝牙服务不可用！</string>
+    <string name="info_revfail">接收数据失败！ </string>
+    <string name="listnotmatch">未配对设备</string>
+    <string name="listsearchdev">查找设备</string>
+    <string name="listsearchcancel">取消</string>
+    <string name="listsearching">查找设备中……</string>
+    <string name="listselectdevtoconn">选择要连接的设备</string>
+    <string name="listnotgetdev">没有找到新设备</string>
+    <string name="listbluetoothconn">蓝牙连接</string>
+    <string name="act_btconn">连接</string>
+    <string name="act_btconngood">成功!</string>
+    <string name="act_btconnfail">失败!</string>
+    <string name="about">关于…</string>
+    <string name="setting">设置…</string>
+    <string name="aboutmsg">超高频蓝牙便携读卡器V1.0\n版权所有©2015.</string>
+    <string name="website">访问主页</string>
+    <string name="ReadCount">次数(0-65535)</string>
+    <string name="timeinterval">盘点间隔(ms)</string>
+
+    <string name="errorant">功率值必须在0~150范围内 </string>
+    <string name="errortimeinter">盘点间隔时间必须大于0 </string>
+    <string name="errorreadcount">读取次数必须在0~65535之间 </string>
+    <string name="dbm">dBm</string>
+
+
+    <string name="X6ReadFirmwareVersion">获取版本</string>
+    <string name="X6WriteTag">写卡</string>
+    <string name="X6SetDevConfig">应用设置</string>
+    <string name="btconnsta">蓝牙连接状态</string>
+
+    <string-array name="power_array">
+        <item>近距离</item>
+        <item>中距离</item>
+        <item>远距离</item>
+    </string-array>
+</resources>
