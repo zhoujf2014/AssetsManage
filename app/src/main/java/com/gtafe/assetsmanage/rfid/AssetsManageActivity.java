@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -91,7 +92,7 @@ public class AssetsManageActivity extends BaseActivity {
     }
 
     public void ModifyListView(String tagdata) throws IOException {
-        Log.e(TAG, "ModifyListView: "+tagdata );
+        Log.e(TAG, "ModifyListView: " + tagdata);
       /*  HashMap<String, String> maptemp = new HashMap<String, String>();
         HashMap<String, String> mapnew = new HashMap<String, String>();
         boolean inTheList = false;
@@ -254,7 +255,6 @@ public class AssetsManageActivity extends BaseActivity {
                     Bundle x6ver = msg.getData();
                     String x6HWver = x6ver.getString("HWver");
                     String x6SWver = x6ver.getString("SWver");
-
                     System.out.println("x6HWver: " + x6HWver);
                     System.out.println("x6SWver: " + x6SWver);
                     ShowDevVersion(x6HWver, x6SWver);
@@ -315,12 +315,37 @@ public class AssetsManageActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.connectrfid)
-    public void onViewClicked() {
-        try {
-            onConnectButton();
-        } catch (IOException e) {
-            e.printStackTrace();
+    @OnClick({R.id.connectrfid, R.id.start})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+
+            case R.id.connectrfid:
+                try {
+                    onConnectButton();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.start:
+                if (isRfidStart) {
+                    isRfidStart = false;
+                    try {
+                        rfid.M100StopInvTag();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    isRfidStart = true;
+                    try {
+                        rfid.M100StartInvTag(500);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                break;
         }
     }
+
+    private boolean isRfidStart = true;
 }
