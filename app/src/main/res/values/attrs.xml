@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ArcProgressBar">
+        <attr name="arcDistance" format="integer" />
+        <attr name="arcBgColor" format="color" />
+        <attr name="dottedDefaultColor" format="color" />
+        <attr name="dottedRunColor" format="color" />
+        <attr name="dottedLineCount" format="integer" />
+        <attr name="dottedLineWidth" format="integer" />
+        <attr name="dottedLineHeight" format="integer" />
+        <attr name="lineDistance" format="integer" />
+        <attr name="progressMax" format="integer" />
+        <attr name="progressTextSize" format="integer" />
+        <attr name="progressDesc" format="string" />
+        <attr name="progressString" format="string" />
+        <attr name="arcText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="TimelineLayout">
+        <!--时间轴左偏移值-->
+        <attr name="line_margin_left" format="dimension" />
+        <!--时间轴上偏移值-->
+        <attr name="line_margin_top" format="dimension" />
+        <!--线宽-->
+        <attr name="line_stroke_width" format="dimension" />
+        <!--线的颜色-->
+        <attr name="line_color" format="color" />
+        <!--点的大小-->
+        <attr name="point_size" format="dimension" />
+        <!--点的颜色-->
+        <attr name="point_color" format="color" />
+        <!--图标-->
+        <attr name="icon_src" format="reference" />
+    </declare-styleable>
+	
+</resources>

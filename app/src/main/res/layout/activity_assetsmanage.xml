@@ -2,18 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:padding="@dimen/x50">
+
 
     <Button
+
+
         android:id="@+id/connectrfid"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="连接"/>
+        android:layout_marginTop="@dimen/x400"
+        android:background="@drawable/bg_bt_login"
+        android:text="连接设备"
+        android:textColor="@color/white"
+        />
 
     <Button
         android:id="@+id/start"
-        android:layout_width="wrap_content"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="盘点"/>
+        android:layout_marginTop="@dimen/bt_login_margint"
+        android:background="@drawable/bg_bt_login"
+        android:text="开始盘点"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bt_login_margint"
+        android:background="@drawable/bg_bt_login"
+        android:text="开始绑定"
+        android:textColor="@color/white"
+        />
+
 
 </LinearLayout>

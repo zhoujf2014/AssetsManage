@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <com.gtafe.assetsmanage.utils.ClearEditText
+        android:id="@+id/dialog_edit"
+        android:textSize="@dimen/x55"
+        android:layout_width="@dimen/x600"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_edit_rectangle_sel"
+        android:layout_margin="@dimen/x50"></com.gtafe.assetsmanage.utils.ClearEditText>
+
+</LinearLayout>

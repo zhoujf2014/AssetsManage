@@ -2,21 +2,28 @@ package com.gtafe.assetsmanage.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
+
+import com.gtafe.assetsmanage.beans.EventBusBean;
 import com.gtafe.assetsmanage.utils.NetWorkUtil;
 import com.gtafe.assetsmanage.utils.NetworkInterface;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
 
 import butterknife.ButterKnife;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -24,6 +31,7 @@ import okhttp3.Response;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+    private static final String TAG = "BaseActivity";
     protected Context mContext;
     protected boolean isDebug = true;
 
@@ -37,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setView());
-        //  EventBus.getDefault().register(this);
+         EventBus.getDefault().register(this);
         ButterKnife.bind(this);
         mContext = this;
         init();
@@ -53,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         activityEnd();
-        //    EventBus.getDefault().unregister(this);
+          EventBus.getDefault().unregister(this);
     }
 
     protected void startActivity(Class<?> clz, Bundle bundle) {
@@ -77,14 +85,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected void loadDataFromServer(String url) {
+    protected void loadDataFromServer(String url, RequestBody body, int tag) {
 
-        new NetWorkUtil(netInterface).loadDataFromServer(url);
+        new NetWorkUtil(netInterface).loadDataFromServer(url,body,tag);
     }
 
     private NetworkInterface netInterface = new NetworkInterface() {
         @Override
-        public void onLoadDataSuccese(final Response response) {
+        public void onLoadDataSuccese(final Response response, final int tag) {
             String string = null;
             try {
                 string = response.body().string();
@@ -96,29 +104,61 @@ public abstract class BaseActivity extends AppCompatActivity {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                        loadDataFromServerSuccessful(finalString);
+                    loadDataFromServerSuccessful(finalString,tag);
                 }
             });
         }
 
         @Override
-        public void onLoadDataFail(final String s) {
+        public void onLoadDataFail(final String s, final int tag) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    loadDataFromServerFail(s);
+                    loadDataFromServerFail(s,tag);
                 }
             });
         }
-
-
     };
 
-    protected void loadDataFromServerFail(String s) {
-
+    protected void loadDataFromServerFail(String s, int tag) {
+        Log.e(TAG, "loadDataFromServerFail: "+s );
     }
 
-    protected void loadDataFromServerSuccessful(String string) {
+    protected void loadDataFromServerSuccessful(String string, int tag) {
+
+    }
+    /**
+     * 动态的设置状态栏  实现沉浸式状态栏
+     */
+    protected void initState() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+      /*      getWindow().addFlags(WindowManager.LayoutParams.Flag_T);
+            //透明导航栏---虚拟键冲突
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
+//            LinearLayout linear_bar = (LinearLayout) findViewById(R.id.ll_bar);
+            mBaseBinding.llBar.setVisibility(View.VISIBLE);
+            //获取到状态栏的高度
+            int statusHeight = getStatusBarHeight();
+            //动态的设置隐藏布局的高度
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mBaseBinding.llBar.getLayoutParams();
+            params.height = statusHeight;
+            mBaseBinding.llBar.setLayoutParams(params);*/
+        }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(EventBusBean eventBusBean) {
+        try {
+            onEventBusMain(eventBusBean);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected  void onEventBusMain(EventBusBean eventBusBean) throws IOException {
 
     }
 }

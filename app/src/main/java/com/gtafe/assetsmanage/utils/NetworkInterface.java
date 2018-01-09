@@ -8,6 +8,6 @@ import okhttp3.Response;
 
 public interface NetworkInterface {
 
-    void onLoadDataSuccese(Response response);
-    void onLoadDataFail(String s);
+    void onLoadDataSuccese(Response response,int tag);
+    void onLoadDataFail(String s,int tag);
 }

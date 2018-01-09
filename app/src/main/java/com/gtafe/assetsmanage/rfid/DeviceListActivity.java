@@ -20,6 +20,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gtafe.assetsmanage.R;
+import com.gtafe.assetsmanage.beans.EventBusBean;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.Set;
 
@@ -30,10 +33,11 @@ public class DeviceListActivity extends Activity {
     private BluetoothAdapter mBtAdapter;
     private ArrayAdapter<String> mPairedDevicesArrayAdapter;
     private ArrayAdapter<String> mNewDevicesArrayAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+       // EventBus.getDefault().register(this);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.device_list);
         setResult(Activity.RESULT_CANCELED);
@@ -47,7 +51,7 @@ public class DeviceListActivity extends Activity {
         scanButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Set<BluetoothDevice> bondedDevices = mBtAdapter.getBondedDevices();
-                Log.e(TAG, "onClick: "+bondedDevices.size() );
+                Log.e(TAG, "onClick: " + bondedDevices.size());
                 doDiscovery();
                 v.setVisibility(View.GONE);
             }
@@ -86,7 +90,7 @@ public class DeviceListActivity extends Activity {
             mBtAdapter.cancelDiscovery();
         }*/
         mBtAdapter.startDiscovery();
-        Log.e(TAG, "doDiscovery: "+"开始搜索" );
+        Log.e(TAG, "doDiscovery: " + "开始搜索");
    /*     new Thread(new Runnable() {
             @Override
             public void run() {
@@ -105,9 +109,13 @@ public class DeviceListActivity extends Activity {
                 return;
             }
             String address = info.substring(info.length() - 17);
-            Intent intent = new Intent();
+         /*   Intent intent = new Intent();
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
-            setResult(Activity.RESULT_OK, intent);
+            setResult(Activity.RESULT_OK, intent);*/
+            EventBusBean eventBusBean = new EventBusBean();
+            eventBusBean.setType(0);
+            eventBusBean.setMessage(address);
+            EventBus.getDefault().post(eventBusBean);
             finish();
 
         }
@@ -147,6 +155,7 @@ public class DeviceListActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
 
         if (mBtAdapter != null) {
             mBtAdapter.cancelDiscovery();

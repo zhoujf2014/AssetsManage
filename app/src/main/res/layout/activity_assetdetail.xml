@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/x20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x200">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+            android:text="资产编号："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_instrumentnum"
+            style="@style/AssetsDetailText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+
+            android:text="资产名称："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_instrumentname"
+            style="@style/AssetsDetailText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+
+            android:text="资产型号："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_statuscodename"
+            style="@style/AssetsDetailText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+
+            android:text="用途："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_purposename"
+            style="@style/AssetsDetailText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+
+            android:text="负责人："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_managername"
+            style="@style/AssetsDetailText"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/AssetsDetailText_head"
+
+            android:text="RFID："
+            />
+
+        <TextView
+            android:id="@+id/assetsdetail_rfid"
+            style="@style/AssetsDetailText"
+            android:layout_width="@dimen/x200"
+            android:background="@drawable/bg_edit_def_rectangle"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/assetsdetail_instrumenttype"
+        style="@style/AssetsDetailText"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/assetsdetail_specification"
+
+        style="@style/AssetsDetailText"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/assetsdetail_sourcename"
+
+        style="@style/AssetsDetailText"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/assetsdetail_purchasedate"
+
+        style="@style/AssetsDetailText"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/assetsdetail_instrumentcategoryname"
+
+        style="@style/AssetsDetailText"
+        android:visibility="gone"/>
+
+
+    <Button
+
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bt_login_margint"
+        android:background="@drawable/bg_bt_login"
+        android:text="提交"
+        android:textColor="@color/white"
+        />
+</LinearLayout>

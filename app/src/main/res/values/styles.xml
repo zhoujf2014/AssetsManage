@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AssetsDetailText">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/x35</item>
+        <item name="android:text">sss</item>
+        <item name="android:layout_margin">@dimen/x20</item>
+
+    </style>
+    <style name="AssetsDetailText_head" parent="AssetsDetailText">
+
+        <item name="android:layout_width">@dimen/x250</item>
+        <item name="android:gravity">right</item>
+        <item name="android:text">资产编号:</item>
+
+
     </style>
 
 </resources>

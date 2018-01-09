@@ -3,4 +3,87 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#fff</color>
+    <color name="background_select">#88000000</color>
+    <color name="colorTheme">#ffce3d3a</color>
+
+    <!--tab标签栏文字的颜色-->
+    <color name="colorTabText">#585858</color>
+
+    <!--默认背景色-->
+    <color name="background_color">#f5f5f5</color>
+    <color name="background_color_two">#e3e3e3</color>
+    <color name="background_transparent_dark">#cc000000</color>
+    <color name="color_green">#05c0ab</color>
+    <color name="default_color_green">#30b76f</color>
+
+    <!-- item之间线 -->
+    <color name="line_color">#d5d5d5</color>
+
+    <color name="bg_menu">#eee</color>
+    <color name="black">#000</color>
+
+    <color name="title_left">#4ac564</color>
+    <color name="title_right">#17a375</color>
+
+    <color name="baseline">#dedede</color>
+    <color name="textColor_def">#333333</color>
+    <color name="textColor_def_bright">#666666</color>
+    <color name="album_item_bg">#fffcfcfd</color>
+    <color name="common_title_bg">#aa111213</color>
+
+    <!--练习记录-->
+    <color name="textColor_type">#2fb76f</color>
+    <color name="bg_finished">#ed9ab8</color>
+    <color name="bg_Unfinished">#8cbe35</color>
+    <color name="bg_restest">#f5ab37</color>
+    <color name="bg_continueExe">#30b76f</color>
+    <color name="indicator_bg">#30b76f</color>
+    <color name="indicator_text_default">#666666</color>
+    <color name="indicator_text_sub">#999999</color>
+    <color name="item_sub_line_diver">#e6e6e6</color>
+    <color name="item_sub_line_oval">#cbcbcb</color>
+    <color name="item_sub_execisenote_subject">#efefef</color>
+    <color name="item_sub_execisenote_subject_line">#dedede</color>
+    <color name="item_sub_execisenote_open">#528efe</color>
+    <color name="item_sub_execisenote_open_bg">#f8f8f8</color>
+    <color name="item_sub_execisenote_open_description">#999999</color>
+    <color name="item_sub_execisenote_open_point">#555555</color>
+
+    <!--练习首页-->
+    <color name="textcolor_selected">#5bc287</color>
+    <color name="textcolor_default">#c3c8c7</color>
+    <color name="bg_start">#4ac665</color>
+    <color name="bg_end">#17a375</color>
+    <color name="text_grey">#999999</color>
+    <color name="text_black">#333333</color>
+    <color name="bg_pop">#f8f8f8</color>
+    <color name="tab_default">#6c7b76</color>
+    <color name="tab_seclected">#30b76f</color>
+    <color name="start_question_text">#30b471</color>
+    <color name="start_question_bg">#ebffd1</color>
+    <color name="description_text">#bdf8d0</color>
+    <color name="progressColor">#30b76f</color>
+    <color name="dottedDefaultColor">#61c69f</color>    <!--虚线默认-->
+    <color name="arcbgColor">#46c883</color>    <!--圆弧-->
+    <color name="dottedRunColor">#ffffff</color>    <!--虚线选中-->
+    <color name="exercise_num_diver">#73e7ac</color>    <!--练习情况分割线-->
+    <color name="tab_top_line">#d4d8d9</color>    <!--tab顶部线-->
+    <color name="exercisenote_answer">#31b289</color>    <!--tab顶部线-->
+
+    <!--错题-->
+    <color name="bt_cancle">#444444</color>
+
+    <!--登录-->
+    <color name="bt_login">#30b76f</color>
+    <color name="bg_edit_sel">#3fbe81</color>
+    <color name="bg_edit_def">#dbdbdb</color>
+
+    <!--试题报告-->
+    <color name="text">#c4fdd4</color>
+    <!--抽题练习-->
+    <color name="textColor_default">#0F0F0F</color>
+    <color name="textColor_sel">#13924e</color>
+    <color name="textColor_unSel">#b2b2b2</color>
+    <color name="textView_bg">#efefef</color>
 </resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/x35"
+            android:id="@+id/item_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1."/>
+
+        <TextView
+            android:textSize="@dimen/x30"
+            android:id="@+id/item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="【多选题】"/>
+
+        <TextView
+            android:id="@+id/item_stem"
+            android:textSize="@dimen/x35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="具有清热解毒功能的是"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_answer"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"/>
+</LinearLayout>

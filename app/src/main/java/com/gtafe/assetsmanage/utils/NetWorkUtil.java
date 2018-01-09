@@ -16,6 +16,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -23,9 +24,9 @@ import okhttp3.Response;
  */
 
 public class NetWorkUtil {
+    private static final String TAG = "NetWorkUtil";
     private OkHttpClient mOkHttpClient;
     private NetworkInterface mNetworkInterface;
-
 
 
     public NetWorkUtil(NetworkInterface networkInterface) {
@@ -33,29 +34,40 @@ public class NetWorkUtil {
     }
 
 
-    public void loadDataFromServer(String url) {
-
+    public void loadDataFromServer(String url, RequestBody body, final int tag) {
         mOkHttpClient = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+        String URL = Constant.HEAD + url;
+        Log.e(TAG, "loadDataFromServer: "+URL );
+        Request request = null;
+        if (body == null) {
+            request = new Request.Builder()
+                    .url(URL)
+                    .build();
+        } else {
+            request = new Request.Builder()
+                    .post(body)
+                    .url(URL)
+                    .build();
+        }
+
         mOkHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
-                mNetworkInterface.onLoadDataFail("访问网络失败");
+                mNetworkInterface.onLoadDataFail("访问网络失败", tag);
 
             }
+
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Log.e("NetWorkUtil", "获取数据成功了");
                     Log.e("NetWorkUtil", "response.code()==" + response.code());
                     Log.e("NetWorkUtil", "response.body().string()==" + response.body());
-                    mNetworkInterface.onLoadDataSuccese(response);
+                    mNetworkInterface.onLoadDataSuccese(response, tag);
 
                 } else {
-                    mNetworkInterface.onLoadDataFail("返回数据为空");
+                    mNetworkInterface.onLoadDataFail("返回数据为空", tag);
 
 
                 }

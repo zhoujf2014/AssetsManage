@@ -33,4 +33,5 @@ dependencies {
     compile 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.xw.repo:bubbleseekbar:3.6-lite'
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
 }
