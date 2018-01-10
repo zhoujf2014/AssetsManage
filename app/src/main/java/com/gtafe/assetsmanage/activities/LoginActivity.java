@@ -135,8 +135,6 @@ public class LoginActivity extends BaseActivity {
                  builder.show();
                 break;
             case R.id.login:
-
-
                 String userName = mUser.getText().toString().trim();
                 String password = mPwd.getText().toString().trim();
                 if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(password)) {
@@ -148,14 +146,11 @@ public class LoginActivity extends BaseActivity {
                 edit.putString(Constant.PASSWORD, password);
                 edit.putString(Constant.USERNAME, userName);
                 edit.commit();
-
                 Constant.HEAD = "http://" + mIp_port + "/";
                 Log.e(TAG, "onViewClicked: "+mIpPort );
 //测试
                 startActivity(new Intent(mContext, AssetsManageActivity.class));
                 finish();
-
-
                 RequestBody body = new FormBody.Builder().add("userName", userName).add("userPwd", password).build();
                 loadDataFromServer("dataapi/user/checkUserLogin", body, 1);
                 break;

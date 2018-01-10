@@ -11,7 +11,9 @@
 
         android:id="@+id/connectrfid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/x80"
+        android:textSize="@dimen/x25"
+
         android:layout_marginTop="@dimen/x400"
         android:background="@drawable/bg_bt_login"
         android:text="连接设备"
@@ -20,9 +22,11 @@
 
     <Button
         android:id="@+id/start"
+        android:textSize="@dimen/x25"
+        android:layout_height="@dimen/x80"
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         android:layout_marginTop="@dimen/bt_login_margint"
         android:background="@drawable/bg_bt_login"
         android:text="开始盘点"
@@ -31,8 +35,9 @@
 
     <Button
         android:id="@+id/scan"
+        android:textSize="@dimen/x25"
+        android:layout_height="@dimen/x80"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/bt_login_margint"
         android:background="@drawable/bg_bt_login"
         android:text="开始绑定"

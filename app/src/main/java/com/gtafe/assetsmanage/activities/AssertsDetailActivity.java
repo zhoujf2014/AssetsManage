@@ -7,23 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.gtafe.assetsmanage.R;
 import com.gtafe.assetsmanage.beans.EventBusBean;
 import com.gtafe.assetsmanage.beans.GetInstrumentInfo;
 import com.gtafe.assetsmanage.rfid.AssetsManageActivity;
-
 import org.greenrobot.eventbus.EventBus;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 import okhttp3.FormBody;

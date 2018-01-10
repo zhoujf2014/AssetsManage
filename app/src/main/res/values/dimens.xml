@@ -92,8 +92,8 @@
     <dimen name="question_detail__margintb">96dp</dimen>
     <dimen name="user_icon__margintl">12dp</dimen>
     <!--登录-->
-    <dimen name="ll_edit_bt_paddig">20dp</dimen>
-    <dimen name="bt_login_margint">40dp</dimen>
+    <dimen name="ll_edit_bt_paddig">@dimen/x35</dimen>
+    <dimen name="bt_login_margint">@dimen/x80</dimen>
 
     <!--下拉刷新和上拉加载-->
     <dimen name="refresh_header_height_twitter">80dp</dimen>

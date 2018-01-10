@@ -9,7 +9,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/x500"
         android:background="@drawable/login_banner_asserts"/>
 
     <LinearLayout
@@ -23,7 +23,7 @@
         <com.gtafe.assetsmanage.utils.ClearEditText
             android:id="@+id/user"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="@dimen/y110"
             android:background="@drawable/bg_edit_login"
             android:hint="@string/username_hint"
             android:textColorHint="@color/text_grey"/>
@@ -32,7 +32,8 @@
 
             android:id="@+id/pwd"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="@dimen/y110"
+
             android:background="@drawable/bg_edit_login"
             android:hint="@string/pwd_hint"
             android:inputType="textPassword"
@@ -63,6 +64,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/bt_login_margint"
+            android:textSize="@dimen/x30"
+            android:padding="@dimen/x8"
             android:background="@drawable/bg_bt_login"
             android:text="@string/login"
             android:textColor="@color/white"
